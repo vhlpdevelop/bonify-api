@@ -1,0 +1,4 @@
+primeiro use pm2 start all
+desligar tudo pm2 stop all
+para atualizar os dados pm2 restart all
+para visualizar erros pm2 logs
