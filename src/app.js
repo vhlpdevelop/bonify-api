@@ -7,7 +7,7 @@ require("dotenv").config()
 const express = require('express');
 const httpProxy = require('express-http-proxy');
 const app = express();
-app.enable('trust proxy')
+
 const port = 443;	
 app.use(bodyParser.json());
 app.use(cors());

@@ -1,13 +1,17 @@
 
 module.exports = {
-    apps : [
+  apps: [
     {
-      name: "HotSpot Service",
-      script: "./src/hotspot_service/app.js",
+      name: `HotSpot Service`,
+      script: 'build/src/hotspot_service/app.js',
+      instances: "max",
+      exec_mode: "cluster",
     },
     {
-        name: "API GATEWAY",
-        script: "./src/app.js",
-    }
-    ]
+      name: `API GATEWAY`,
+      script: 'build/src/app.js',
+      instances: "max",
+      exec_mode: "cluster",
+    },
+  ]
 }
