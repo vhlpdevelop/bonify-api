@@ -4,14 +4,24 @@ module.exports = {
     {
       name: `HotSpot Service`,
       script: './src/hotspot_service/app.js',
+      env: {
+        NODE_ENV: "development",
+      },
+      env_production: {
+        NODE_ENV: "production",
+      }
      
-      exec_mode: "cluster",
     },
     {
       name: `API GATEWAY`,
       script: './src/app.js',
- 
-      exec_mode: "cluster",
+      env: {
+        NODE_ENV: "development",
+      },
+      env_production: {
+        NODE_ENV: "production",
+      }
+   
     },
   ]
 }
