@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 
 
 //PROXYS
-const HotSpotServiceProxy = httpProxy('http://localhost:' + HOTSPOT_PORT);
+const HotSpotServiceProxy = httpProxy("0.0.0.0:" + HOTSPOT_PORT);
 
 
 
@@ -56,7 +56,10 @@ db.on("error", (err) => {
   console.log(err);
 });
 */
-app.listen(3000);
+app.listen(3000, "0.0.0.0", () => {
+  console.log(`Servidor rodando na porta 3000`);
+
+});
 /*
 server.listen(port, "0.0.0.0", () => {
     console.log(`Servidor rodando na porta 443`);
