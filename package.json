@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "pm2 start ecosystem.config.js --deep-monitoring --env production",
+    "start": "pm2 start ecosystem.config.js --env production --attach",
     "dev": "nodemon server/server.js"
   },
   "dependencies": {
