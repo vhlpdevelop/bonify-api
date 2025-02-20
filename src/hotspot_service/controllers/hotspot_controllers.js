@@ -2,6 +2,9 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 module.exports = {
+    async Hello(req,res){
+        res.send('Hello World!');
+    },
     /*
     async fetchEmpresas(req, res) {
         try {
