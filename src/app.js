@@ -8,7 +8,7 @@ const express = require('express');
 const httpProxy = require('express-http-proxy');
 const app = express();
 
-const port = 443;	
+//const port = 443;	
 app.use(bodyParser.json());
 app.use(cors());
 //app.use(helmet());
@@ -19,9 +19,10 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 
 //ENV
+
 const {
     HOTSPOT_PORT,
-
+    PORT
 } = process.env
 
 //IO SOCKET
@@ -41,7 +42,8 @@ app.get('/', (req, res) => {
 
 
 //PROXYS
-const HotSpotServiceProxy = httpProxy("0.0.0.0:" + HOTSPOT_PORT);
+const hotspot_port = process.env.HOTSPOT_PORT || 4000;
+const HotSpotServiceProxy = httpProxy("0.0.0.0:" + hotspot_port);
 
 
 
@@ -56,7 +58,13 @@ db.on("error", (err) => {
   console.log(err);
 });
 */
-app.listen(3000, "0.0.0.0", () => {
+const port = process.env.PORT || 3000;
+
+// Listen on `port` and 0.0.0.0
+app.listen(port, "0.0.0.0", function () {
+  // ...
+});
+app.listen(process.env.PORT, "0.0.0.0", () => {
   console.log(`Servidor rodando na porta 3000`);
 
 });

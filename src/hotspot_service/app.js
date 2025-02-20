@@ -17,9 +17,9 @@ const {
     HOTSPOT_PORT,
 
 } = process.env
-
-app.listen(HOTSPOT_PORT, () => {
-  console.log(`HOTSPOT rodando na porta ${HOTSPOT_PORT}`);
+const hotspot_port = process.env.HOTSPOT_PORT || 4000;
+app.listen(hotspot_port, () => {
+  console.log(`HOTSPOT rodando na porta ${hotspot_port}`);
 })
 /*
 db.on("open", () => {
