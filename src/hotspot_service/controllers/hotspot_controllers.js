@@ -2,7 +2,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 module.exports = {
-    async Hello(req,res){
+    async Hello(req, res) {
         res.send('Hello World!');
     },
     /*
@@ -34,13 +34,17 @@ module.exports = {
         res.redirect(`https://bonify.netlify.app/hotspot-redirect?mac=${mac}&ip=${ip}&username=${username}&link-login=${linkLogin}&link-login-only=${linkLoginOnly}&link-orig=${linkOrig}&error=${error}`);
     },
 
-    async getAds(req,res){
+    async getAds(req, res) {
         console.log(req.body)
+        const imageURL = "https://i.ibb.co/JRsmwJDM/Imagem-do-Whats-App-de-2025-02-20-s-15-20-47-7ecc4516.jpg"
+        const image = await axios.get(imageURL, { responseType: 'arraybuffer' });
+        const raw = Buffer.from(image.data).toString('base64');
+        const base64Image = "data:" + image.headers["content-type"] + ";base64," + raw;
         const ads = [ //Exemplo do retorno de propaganda
             {
                 title: 'Propaganda Exemplo',
                 description: 'Essa é uma propaganda de exemplo, olha que maravilha',
-                imageUrl: "https://i.ibb.co/JRsmwJDM/Imagem-do-Whats-App-de-2025-02-20-s-15-20-47-7ecc4516.jpg"
+                imageUrl: base64Image
             },
         ]
         return res.status(200).json(ads)
