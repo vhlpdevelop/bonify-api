@@ -39,7 +39,7 @@ const io = require("socket.io")(server, {
 
 
 //PROXYS
-const hotspot_port = process.env.HOTSPOT_PORT || 4000;
+const hotspot_port = process.env.HOTSPOT_PORT || 3001;
 const HotSpotServiceProxy = httpProxy("0.0.0.0:" + hotspot_port);
 
 
