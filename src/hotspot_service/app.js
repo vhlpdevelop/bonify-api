@@ -5,7 +5,7 @@ const cors = require("cors");
 //const mongoSanitize = require("express-mongo-sanitize")
 require("dotenv").config()
 const app = require("express")();
-app.enable('trust proxy')
+//app.enable('trust proxy')
 app.use(bodyParser.json());
 app.use(cors());
 //app.use(helmet());
