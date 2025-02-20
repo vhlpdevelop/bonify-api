@@ -35,9 +35,6 @@ const io = require("socket.io")(server, {
 });
 */
 
-
-
-
 //PROXYS
 const hotspot_port = process.env.HOTSPOT_PORT || 3001;
 const HotSpotServiceProxy = httpProxy("0.0.0.0:" + hotspot_port);
@@ -55,12 +52,14 @@ db.on("error", (err) => {
   console.log(err);
 });
 */
+
 const port = process.env.PORT || 3000;
 
-app.listen(process.env.PORT, "0.0.0.0", () => {
+app.listen(3000, "0.0.0.0", () => {
   console.log(`Servidor rodando na porta 3000`);
 
 });
+
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
