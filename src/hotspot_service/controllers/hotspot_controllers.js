@@ -33,6 +33,10 @@ module.exports = {
         // Redirecionar para a página hotspot-redirect no frontend
         res.redirect(`http://192.168.88.22:5173/hotspot-redirect?mac=${mac}&ip=${ip}&username=${username}&link-login=${linkLogin}&link-login-only=${linkLoginOnly}&link-orig=${linkOrig}&error=${error}`);
     },
+    async getAds(req,res){
+        console.log(req.body)
+        return res.status(200).data({ok:true})
+    },
     async hotspotAutorize(req, res) {
         console.log(req.body)
         const { username, password, ip, mac } = req.body;

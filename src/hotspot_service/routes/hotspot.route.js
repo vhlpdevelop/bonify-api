@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.post('/hotspot-redirect', controller.hotspot_redirect)
 router.post('/hotspotAutorize', controller.hotspotAutorize)	
+router.post('/getAds', controller.getAds) //METHOD POST
 router.get('/', controller.Hello)
 // Exemplo de middleware router.post('/fetchStoreFromEmpresa',middleware, controller.fetchStoreFromEmpresa)
 
