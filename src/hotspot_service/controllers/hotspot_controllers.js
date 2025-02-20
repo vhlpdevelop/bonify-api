@@ -35,7 +35,14 @@ module.exports = {
     },
     async getAds(req,res){
         console.log(req.body)
-        return res.status(200).data({ok:true})
+        const ads = [ //Exemplo do retorno de propaganda
+            {
+                title: 'Propaganda Exemplo',
+                description: 'Essa é uma propaganda de exemplo, olha que maravilha',
+                imageUrl: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExemszdG9hcW5rMTAyNGF0ZzE1b2Q2aG9lcG5rbGg3NzRqNHVtNXgwYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/anjQ3PkRSxPb67QTBz/giphy.gif',
+            },
+        ]
+        return res.status(200).json(ads)
     },
     async hotspotAutorize(req, res) {
         console.log(req.body)
