@@ -31,7 +31,7 @@ module.exports = {
         });
 
         // Redirecionar para a página hotspot-redirect no frontend
-        res.redirect(`http://192.168.88.22:5173/hotspot-redirect?mac=${mac}&ip=${ip}&username=${username}&link-login=${linkLogin}&link-login-only=${linkLoginOnly}&link-orig=${linkOrig}&error=${error}`);
+        res.redirect(`https://bonify.netlify.app/hotspot-redirect?mac=${mac}&ip=${ip}&username=${username}&link-login=${linkLogin}&link-login-only=${linkLoginOnly}&link-orig=${linkOrig}&error=${error}`);
     },
     async getAds(req,res){
         console.log(req.body)
