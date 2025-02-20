@@ -33,17 +33,19 @@ module.exports = {
         // Redirecionar para a página hotspot-redirect no frontend
         res.redirect(`https://bonify.netlify.app/hotspot-redirect?mac=${mac}&ip=${ip}&username=${username}&link-login=${linkLogin}&link-login-only=${linkLoginOnly}&link-orig=${linkOrig}&error=${error}`);
     },
+
     async getAds(req,res){
         console.log(req.body)
         const ads = [ //Exemplo do retorno de propaganda
             {
                 title: 'Propaganda Exemplo',
                 description: 'Essa é uma propaganda de exemplo, olha que maravilha',
-                imageUrl: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExemszdG9hcW5rMTAyNGF0ZzE1b2Q2aG9lcG5rbGg3NzRqNHVtNXgwYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/anjQ3PkRSxPb67QTBz/giphy.gif',
+                imageUrl: "https://i.ibb.co/JRsmwJDM/Imagem-do-Whats-App-de-2025-02-20-s-15-20-47-7ecc4516.jpg"
             },
         ]
         return res.status(200).json(ads)
     },
+
     async hotspotAutorize(req, res) {
         console.log(req.body)
         const { username, password, ip, mac } = req.body;
